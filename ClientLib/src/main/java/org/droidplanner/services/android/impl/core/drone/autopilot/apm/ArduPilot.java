@@ -112,10 +112,6 @@ public abstract class ArduPilot extends GenericMavLinkDrone {
     }
 
     protected void setAltitudeGroundAndAirSpeeds(double altitude, double groundSpeed, double airSpeed, double climb) {
-        if (this.altitude.getAltitude() != altitude) {
-            this.altitude.setAltitude(altitude);
-            notifyDroneEvent(DroneInterfaces.DroneEventsType.ALTITUDE);
-        }
 
         if (speed.getGroundSpeed() != groundSpeed || speed.getAirSpeed() != airSpeed || speed.getVerticalSpeed() != climb) {
             speed.setGroundSpeed(groundSpeed);
